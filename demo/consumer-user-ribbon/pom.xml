@@ -13,7 +13,7 @@
 
 	<parent>
 		<groupId>com.kkl.demo</groupId>
-		<artifactId>parent</artifactId>
+		<artifactId>demo</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	
