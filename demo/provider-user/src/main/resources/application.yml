@@ -1,0 +1,59 @@
+---
+spring:
+  application:
+    name: provider-user
+  profiles: provider-user1
+
+server:
+  port: 8810
+
+eureka:
+  instance:
+    prefer-ip-address: true
+#    appname: provider-user
+    metadata-map:
+      zone: local
+      function: provider-user1
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:peer1@peer1:8800/eureka/,http://peer2:peer2@peer2:8801/eureka/
+    healthcheck:
+      enabled: true
+
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+
+---
+spring:
+  application:
+    name: provider-user
+  profiles: provider-user2
+
+server:
+  port: 8811
+
+eureka:
+  instance:
+    prefer-ip-address: true
+#    appname: provider-user
+    metadata-map:
+      zone: local
+      function: provider-user2
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:peer1@peer1:8800/eureka/,http://peer2:peer2@peer2:8801/eureka/
+    healthcheck:
+      enabled: true
+
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@

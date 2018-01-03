@@ -1,0 +1,66 @@
+---
+spring:
+  profiles: peer1
+  application:
+    name: eureka-server
+server:
+  port: 8800
+security:
+  basic:
+    enabled: true
+  user:
+    name: peer1
+    password: peer1
+
+eureka:
+  datacenter: local
+  environment: demo
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+## 单台eureka使用,ha注释
+#    registerWithEureka: false
+#    fetchRegistry: false
+#    serviceUrl:
+#      defaultZone: http://demo:demo@${eureka.instance.hostname}:${server.port}/eureka/
+    serviceUrl:
+      defaultZone: http://peer2:peer2@peer2:8801/eureka/
+#    healthcheck:
+#      enabled: true
+#  dashboard:
+#    enabled: true
+#    path: admin
+---
+spring:
+  profiles: peer2
+  application:
+    name: eureka-server
+server:
+  port: 8801
+security:
+  basic:
+    enabled: true
+  user:
+    name: peer2
+    password: peer2
+
+eureka:
+  datacenter: local
+  environment: demo
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+## 单台eureka使用,ha注释
+#    registerWithEureka: false
+#    fetchRegistry: false
+#    serviceUrl:
+#      defaultZone: http://demo:demo@${eureka.instance.hostname}:${server.port}/eureka/
+    serviceUrl:
+      defaultZone: http://peer1:peer1@peer1:8800/eureka/
+#    healthcheck:
+#      enabled: true
+#  dashboard:
+#    enabled: true
+#    path: admin

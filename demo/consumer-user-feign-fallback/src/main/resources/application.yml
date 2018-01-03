@@ -1,0 +1,29 @@
+spring:
+  profiles: consumer-user-feign-fallback
+  application:
+    name: consumer-user-feign-fallback
+
+server:
+  port: 8840
+eureka:
+  instance:
+    prefer-ip-address: true
+#    appname: consumer-user-ribbon
+    metadata-map:
+      zone: local
+      function: consumer-user-feign-fallback
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:peer1@peer1:8800/eureka/,http://peer2:peer2@peer2:8801/eureka/
+    healthcheck:
+      enabled: true
+feign:
+  hystrix:
+    enabled: true
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
