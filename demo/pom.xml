@@ -21,9 +21,10 @@
 		<module>eureka-server</module>
 		<module>provider-user</module>
 		<module>consumer-user-ribbon</module>
-		<module>hystrix-dashboard</module>
 		<module>consumer-user-feign</module>	
-		<module>consumer-user-feign-fallback</module>	
+		<module>consumer-user-feign-fallback</module>
+		<module>hystrix-dashboard</module>
+		<module>hystrix-turbine</module>	
 	</modules>
 
 	<properties>

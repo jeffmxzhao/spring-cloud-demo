@@ -1,0 +1,12 @@
+server:
+  port: 8860
+eureka:
+  instance:
+    prefer-ip-address: true
+#    appname: consumer-user-ribbon
+    metadata-map:
+      zone: local
+      function: consumer-user-ribbon
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:peer1@peer1:8800/eureka/,http://peer2:peer2@peer2:8801/eureka/
