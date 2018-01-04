@@ -1,12 +1,20 @@
 server:
-  port: 8860
+  port: 8850
+spring:
+  application:
+    name: hystrix-turbine
 eureka:
   instance:
     prefer-ip-address: true
-#    appname: consumer-user-ribbon
+#    appname: hystrix-turbine
     metadata-map:
       zone: local
-      function: consumer-user-ribbon
+      function: hystrix-turbine
   client:
     serviceUrl:
       defaultZone: http://peer1:peer1@peer1:8800/eureka/,http://peer2:peer2@peer2:8801/eureka/
+turbine:
+  appConfig: consumer-user-ribbon,consumer-user-feign,consumer-user-feign-fallback
+  clusterNameExpression: "'default'"
+  aggregator:
+    clusterConfig: default
