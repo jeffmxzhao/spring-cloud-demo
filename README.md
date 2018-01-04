@@ -7,3 +7,5 @@ spring cloud 学习demo
 - ribbon
 - feign
 - feign hystrix fallback
+- hystrix dashboard
+- hystrix turbine
