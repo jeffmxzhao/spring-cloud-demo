@@ -29,8 +29,8 @@
 	<distributionManagement>
 		<repository>
 			<id>nexus</id>
-			<name>Nexus Snapshot</name>
-			<url>http://192.168.0.200:8081/repository/kkl-releases/</url>
+			<name>kkl-releases</name>
+			<url>http://119.23.43.232:9991/repository/kkl-releases/</url>
 		</repository>
 	</distributionManagement>
 
