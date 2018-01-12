@@ -1,0 +1,32 @@
+
+spring:
+  application:
+    name: admin-server
+  boot:
+    admin:
+      routes:
+        endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,beans,health,hystrix.stream,turbine.stream
+      turbine:
+        clusters: default
+        location: hystrix-turbine
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:peer1@peer1:8800/eureka/,http://peer2:peer2@peer2:8801/eureka/
+#security:
+#  basic:
+#    enabled: true
+#  user:
+#    name: admin
+#    password: 123
+server:
+  port: 8805
+info:
+  app:
+    name: @project.artifactId@
+    desc: 管理服务器
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+  version: @project.version@

@@ -27,6 +27,7 @@ info:
     java:
       source: @java.version@
       target: @java.version@
+  version: @project.version@
 
 ---
 spring:
@@ -57,3 +58,4 @@ info:
     java:
       source: @java.version@
       target: @java.version@
+  version: @project.version@
