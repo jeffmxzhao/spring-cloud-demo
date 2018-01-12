@@ -31,6 +31,10 @@ eureka:
 #  dashboard:
 #    enabled: true
 #    path: admin
+info:
+  name: @project.artifactId@
+  desc: eureka服务器
+  version: @project.version@
 ---
 spring:
   profiles: peer2
@@ -64,3 +68,7 @@ eureka:
 #  dashboard:
 #    enabled: true
 #    path: admin
+info:
+  name: @project.artifactId@
+  desc: eureka服务器
+  version: @project.version@

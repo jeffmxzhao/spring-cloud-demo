@@ -2,7 +2,6 @@ spring:
   profiles: consumer-user-feign-fallback
   application:
     name: consumer-user-feign-fallback
-
 server:
   port: 8840
 eureka:
@@ -27,3 +26,8 @@ info:
     java:
       source: @java.version@
       target: @java.version@
+  version: @project.version@
+management:
+  security:
+    enabled: false
+    roles: SUPERUSER

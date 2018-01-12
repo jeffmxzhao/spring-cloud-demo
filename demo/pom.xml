@@ -25,6 +25,7 @@
 		<module>consumer-user-feign-fallback</module>
 		<module>hystrix-dashboard</module>
 		<module>hystrix-turbine</module>	
+		<module>admin-server</module>
 	</modules>
 
 	<properties>
