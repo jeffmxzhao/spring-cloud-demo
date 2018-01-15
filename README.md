@@ -10,3 +10,4 @@ spring cloud 学习demo
 - feign hystrix fallback
 - hystrix dashboard
 - hystrix turbine
+- eureka client provider with mybatis druid

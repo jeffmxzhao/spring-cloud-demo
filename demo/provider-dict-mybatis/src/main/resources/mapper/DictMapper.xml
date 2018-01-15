@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kkl.demo.mapper.DictMapper" >
+    <select id="get" parameterType="Long" resultType="com.kkl.demo.entity.md.Dict">
+        SELECT
+            id,
+            label,
+            value,
+            type,
+            description,
+            sort,
+            alone_management AS 'aloneManagement',
+            remarks
+        FROM
+            sys_dict
+        WHERE
+            id = #{id}
+    </select>
+
+    <select id="getList" resultType="com.kkl.demo.entity.md.Dict">
+        SELECT
+            id,
+            label,
+            value,
+            type,
+            description,
+            sort,
+            alone_management AS 'aloneManagement',
+            remarks
+        FROM
+            sys_dict
+    </select>
+
+    <select id="getListByPage" resultType="com.kkl.demo.entity.md.Dict">
+        SELECT
+            id,
+            label,
+            value,
+            type,
+            description,
+            sort,
+            alone_management AS 'aloneManagement',
+            remarks
+        FROM
+            sys_dict
+        ORDER BY
+            id
+    </select>
+</mapper>
