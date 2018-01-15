@@ -4,10 +4,12 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
+import java.io.Serializable;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @ApiModel
-public class User {
+public class User implements Serializable {
     @Getter
     @Setter
     @ApiModelProperty(name = "用户ID", notes = "用户ID", required = true)
