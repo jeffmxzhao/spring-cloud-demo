@@ -5,13 +5,17 @@ spring:
     name: eureka-server
 server:
   port: 8800
+  undertow:
+    io-threads: 2
+    worker-threads: 10
+    buffer-size: 1024
+    direct-buffers: true
 security:
   basic:
     enabled: true
   user:
     name: peer1
     password: peer1
-
 eureka:
   datacenter: local
   environment: demo
@@ -42,6 +46,13 @@ spring:
     name: eureka-server
 server:
   port: 8801
+  server:
+    port: 8800
+    undertow:
+      io-threads: 2
+      worker-threads: 10
+      buffer-size: 1024
+      direct-buffers: true
 security:
   basic:
     enabled: true
