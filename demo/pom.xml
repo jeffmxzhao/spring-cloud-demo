@@ -28,6 +28,7 @@
 		<module>admin-server</module>
 		<module>provider-dict-mybatis</module>
 		<module>provider-dict-mybatis-redis</module>
+		<module>provider-dict-mybatis-redis2</module>
 	</modules>
 
 	<properties>
@@ -59,6 +60,11 @@
 			<!--<groupId>org.springframework.boot</groupId>-->
 			<!--<artifactId>spring-boot-starter-jetty</artifactId>-->
 		<!--</dependency>-->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-undertow</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -122,8 +128,8 @@
 	<distributionManagement>
 		<repository>
 			<id>nexus</id>
-			<name>Nexus Snapshot</name>
-			<url>http://192.168.0.200:8081/repository/kkl-releases/</url>
+			<name>Nexus Release</name>
+			<url>your nexus url</url>
 		</repository>
 	</distributionManagement>
 </project>
