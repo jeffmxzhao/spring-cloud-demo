@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -29,4 +30,8 @@ public class User implements Serializable {
     @Setter
     @ApiModelProperty(name = "用户性别", notes = "用户性别")
     private String gender;
+
+    @Getter
+    @Setter
+    private Date testDate;
 }

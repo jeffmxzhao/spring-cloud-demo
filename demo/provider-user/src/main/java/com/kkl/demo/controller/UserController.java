@@ -5,10 +5,9 @@ import com.kkl.demo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 @Slf4j
 @RestController
@@ -23,12 +22,21 @@ public class UserController{
     @GetMapping("/getUserInfo/{id}")
     public User getUserInfo(@PathVariable Long id){
         log.info("====== " + springProfiles + " getUserInfo ======");
-        return userService.getUserInfo(id);
+        User user = userService.getUserInfo(id);
+        user.setTestDate(new Date());
+        return user;
     }
 
     @GetMapping("/getHelloMessage/{id}")
     public String getHelloMessage(@PathVariable Long id){
         log.info("====== " + springProfiles + " getHelloMessage ======");
         return userService.getHelloMessage(id);
+    }
+
+    @PostMapping("/postUserInfo")
+    public User postUserInfo(@RequestBody User user){
+        User returnUser = userService.getUserInfo(user.getId());
+        returnUser.setTestDate(new Date());
+        return returnUser;
     }
 }

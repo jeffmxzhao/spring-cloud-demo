@@ -6,6 +6,7 @@ import feign.Param;
 import feign.RequestLine;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,4 +24,7 @@ public interface UserFeign {
 
     @RequestLine( value = "GET /user/getHelloMessage/{id}")
     String getHelloMessage(@Param(value = "id") Long id);
+
+    @RequestLine( value = "POST /user/postUserInfo")
+    User postUserInfo(@RequestBody User user);
 }

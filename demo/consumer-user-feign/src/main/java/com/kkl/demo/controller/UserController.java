@@ -31,4 +31,16 @@ public class UserController {
     public String getHelloMessageFallback(Long id){
         return "Hello!";
     }
+
+    @GetMapping("/user/postUserInfo")
+    @HystrixCommand(fallbackMethod = "postUserInfoFallback")
+    public User postUserInfo(){
+        User user = new User();
+        user.setId(1L);
+        return userFeign.postUserInfo(user);
+    }
+
+    public User postUserInfoFallback(){
+        return new User();
+    }
 }
