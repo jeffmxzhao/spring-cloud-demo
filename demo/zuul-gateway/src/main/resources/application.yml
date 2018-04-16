@@ -1,61 +1,61 @@
 ---
 spring:
+  profiles: zuul1
   application:
-    name: provider-user
-  profiles: provider-user1
-
+    name: zuul-gateway
 server:
-  port: 8810
-
+  port: 8870
 eureka:
   instance:
     prefer-ip-address: true
 #    appname: provider-user
     metadata-map:
       zone: local
-      function: provider-user1
+      function: zuul-gateway
   client:
     serviceUrl:
       defaultZone: http://peer1:peer1@localhost:8800/eureka/,http://peer2:peer2@localhost:8801/eureka/
     healthcheck:
       enabled: true
-
+zuul:
+  ignoredServices: '*'
+  routes:
+    provider-user: /**
 info:
-  app:
-    name: @project.artifactId@
-    encoding: @project.build.sourceEncoding@
-    java:
-      source: @java.version@
-      target: @java.version@
+  name: @project.artifactId@
+  desc: eureka服务器
   version: @project.version@
+logging:
+  level:
+    com.netflix: debug
 
 ---
 spring:
+  profiles: zuul2
   application:
-    name: provider-user
-  profiles: provider-user2
-
+    name: zuul-gateway
 server:
-  port: 8811
-
+  port: 8871
 eureka:
   instance:
     prefer-ip-address: true
 #    appname: provider-user
     metadata-map:
       zone: local
-      function: provider-user2
+      function: zuul-gateway
   client:
     serviceUrl:
       defaultZone: http://peer1:peer1@localhost:8800/eureka/,http://peer2:peer2@localhost:8801/eureka/
     healthcheck:
       enabled: true
-
+zuul:
+  ignoredServices: '*'
+  routes:
+    provider-user: /**
 info:
-  app:
-    name: @project.artifactId@
-    encoding: @project.build.sourceEncoding@
-    java:
-      source: @java.version@
-      target: @java.version@
+  name: @project.artifactId@
+  desc: eureka服务器
   version: @project.version@
+logging:
+  level:
+    com.netflix: debug

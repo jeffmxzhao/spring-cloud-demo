@@ -13,7 +13,7 @@ eureka:
       function: consumer-user-feign-fallback
   client:
     serviceUrl:
-      defaultZone: http://peer1:peer1@peer1:8800/eureka/,http://peer2:peer2@peer2:8801/eureka/
+      defaultZone: http://peer1:peer1@localhost:8800/eureka/,http://peer2:peer2@localhost:8801/eureka/
     healthcheck:
       enabled: true
 feign:
