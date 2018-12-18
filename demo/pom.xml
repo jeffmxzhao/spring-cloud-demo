@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.10.RELEASE</version>
+		<version>1.5.9.RELEASE</version>
 	</parent>
 	
 	<modules>
@@ -30,6 +30,9 @@
 		<module>provider-dict-mybatis-redis</module>
 		<module>provider-dict-mybatis-redis2</module>
 		<module>zuul-gateway</module>
+		<module>auth-server</module>
+		<module>auth-common</module>
+		<module>auth-client</module>
 	</modules>
 
 	<properties>
@@ -114,6 +117,11 @@
 			<artifactId>lombok</artifactId>
 			<version>1.16.18</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.47</version>
 		</dependency>
 	</dependencies>
 

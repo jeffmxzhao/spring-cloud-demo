@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.kkl.demo.auth.common.config.CommonAutoConfig

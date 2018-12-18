@@ -2,7 +2,7 @@ package com.kkl.demo.service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.kkl.demo.config.RedisConstant;
+import com.kkl.demo.provider.user.config.RedisConstant;
 import com.kkl.demo.entity.md.Dict;
 import com.kkl.demo.mapper.DictMapper;
 import com.kkl.demo.utils.RedisUtils;

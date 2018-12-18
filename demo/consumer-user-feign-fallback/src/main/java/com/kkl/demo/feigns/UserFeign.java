@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(name = "provider-user", fallback = UserFeignFallback.class)
+@FeignClient(name = "zuul-gateway", fallback = UserFeignFallback.class)
 public interface UserFeign {
-    @RequestMapping( value = "/user/getUserInfo/{id}", method = RequestMethod.GET)
+    @RequestMapping( value = "/user-api/getUserInfo/{id}", method = RequestMethod.GET)
     User getUserInfo(@PathVariable(value = "id") Long id);
 
-    @RequestMapping( value = "/user/getHelloMessage/{id}", method = RequestMethod.GET)
+    @RequestMapping( value = "/user-api/getHelloMessage/{id}", method = RequestMethod.GET)
     String getHelloMessage(@PathVariable(value = "id") Long id);
 
 }
